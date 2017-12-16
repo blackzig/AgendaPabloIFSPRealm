@@ -20,6 +20,7 @@ import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -29,8 +30,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.edu.ifspsaocarlos.agenda.R;
+import br.edu.ifspsaocarlos.agenda.activity_realm.MainRealmActivity;
 import br.edu.ifspsaocarlos.agenda.adapter.ContatoAdapter;
 import br.edu.ifspsaocarlos.agenda.data.ContatoDAO;
+import br.edu.ifspsaocarlos.agenda.message.Alert;
 import br.edu.ifspsaocarlos.agenda.model.Contato;
 
 
@@ -114,6 +117,10 @@ public class MainActivity extends AppCompatActivity{
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
 
+        MenuItem jf = menu.findItem(R.id.pesqContato);
+
+        jf.setVisible(true);
+
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         searchView = (SearchView) menu.findItem(R.id.pesqContato).getActionView();
 
@@ -138,8 +145,22 @@ public class MainActivity extends AppCompatActivity{
 
         searchView.setIconifiedByDefault(true);
 
-
         return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.tochoose_realm:
+                startActivity(new Intent(this, MainRealmActivity.class));
+                break;
+            case R.id.tochoose_sqlite:
+                startActivity(new Intent(this, MainActivity.class));
+                break;
+            default:
+                Alert a = new Alert();
+                a.longAlert(this, "Menu choice error");
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 

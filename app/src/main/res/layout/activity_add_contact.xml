@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="br.edu.ifspsaocarlos.agenda.activity_realm.AddContactActivity">
+
+    <TextView
+        android:id="@+id/textViewNomeRealm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nome">
+    </TextView>
+
+
+    <EditText
+        android:id="@+id/editTextNomeRealm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </EditText>
+    <TextView
+        android:id="@+id/textViewFoneRealm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fone">
+    </TextView>
+    <EditText
+        android:id="@+id/editTextFoneRealm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </EditText>
+    <TextView
+        android:id="@+id/textViewEmailRealm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/email" >
+    </TextView>
+    <EditText
+        android:id="@+id/editTextEmailRealm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </EditText>
+
+    <Button
+        android:id="@+id/btn_add_contact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Adicionar"/>
+
+</LinearLayout>
